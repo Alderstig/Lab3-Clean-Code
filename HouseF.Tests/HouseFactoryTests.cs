@@ -21,7 +21,7 @@ namespace HouseF.Tests
         }
 
         [Test]
-        public void CreateHouse_GivenStringHouseType_ReturnsTrueIfIsInstanceOfSingleFamilyHouse()
+        public void CreateHouse_GivenHouse_ReturnsTrueIfIsInstanceOfSingleFamilyHouse()
         {
             House singleFamilyHouse = _factory.CreateHouse("singleFamilyHouse");
 
@@ -29,7 +29,7 @@ namespace HouseF.Tests
         }
 
         [Test]
-        public void CreateHouse_GivenStringHouseType_ReturnsTrueIfIsInstanceOfTinyHouse()
+        public void CreateHouse_GivenHouse_ReturnsTrueIfIsInstanceOfTinyHouse()
         {
             House tinyHouse = _factory.CreateHouse("tinyHouse");
 
@@ -37,7 +37,7 @@ namespace HouseF.Tests
         }
 
         [Test]
-        public void CreateHouse_GivenStringHouseType_ReturnsTrueIfIsInstanceOfMansion()
+        public void CreateHouse_GivenHouse_ReturnsTrueIfIsInstanceOfMansion()
         {
             House mansion = _factory.CreateHouse("mansion");
 
@@ -45,7 +45,7 @@ namespace HouseF.Tests
         }
 
         [Test]
-        public void CreateHouse_GivenStringTypeHouse_ReturnsTrueIfNotNull()
+        public void CreateHouse_GivenListOfHouses_ReturnsTrueIfNotNull()
         {
             List<House> housesToTest = new List<House>() 
             {
