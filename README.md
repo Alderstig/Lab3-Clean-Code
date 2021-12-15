@@ -55,6 +55,7 @@ För G krävs att ni implementerar minst en av de två bygg-patterna nämnda ovan.
 
 Då vill jag ha BÄGGE patterns implementerade. Dessutom vill jag att det ska testas av. Det 
 handlar om en omfattade testning där i alla de flesta fallen ska testas av och verifieras.
+Skall inte kunna bygga upp ett felaktigt hus (test)
 
 ## Mapp-struktur
 

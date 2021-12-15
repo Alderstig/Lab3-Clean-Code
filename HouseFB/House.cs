@@ -23,14 +23,14 @@ namespace HouseFB
 
         public House() { }
 
-        public House(int noOfRooms, int noOfWindows, string streeAdress, bool hasSwimmingPool, int parkingSpotsInGarage)
-        {
-            NoOfRooms = noOfRooms;
-            NoOfWindows = noOfWindows;
-            StreetAdress = streeAdress;
-            HasSwimmingPool = hasSwimmingPool;
-            ParkingSpotsInGarage = parkingSpotsInGarage;
-        }
+        //public House(int noOfRooms, int noOfWindows, string streeAdress, bool hasSwimmingPool, int parkingSpotsInGarage)
+        //{
+        //    NoOfRooms = noOfRooms;
+        //    NoOfWindows = noOfWindows;
+        //    StreetAdress = streeAdress;
+        //    HasSwimmingPool = hasSwimmingPool;
+        //    ParkingSpotsInGarage = parkingSpotsInGarage;
+        //}
 
         public override string ToString()
         {

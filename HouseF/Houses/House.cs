@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HouseF
+namespace HouseF.Houses
 {
     public class House
     {
@@ -14,7 +14,7 @@ namespace HouseF
 
         /// <summary>This field includes the street name and the street number</summary>
         public string StreetAdress { get; set; }
-
+        
         public bool HasSwimmingPool { get; set; }
 
         public int ParkingSpotsInGarage { get; set; }
