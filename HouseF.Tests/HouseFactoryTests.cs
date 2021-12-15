@@ -43,5 +43,19 @@ namespace HouseF.Tests
 
             Assert.IsInstanceOf<Mansion>(mansion);
         }
+
+        [Test]
+        public void CreateHouse_GivenStringTypeHouse_ReturnsTrueIfNotNull()
+        {
+            List<House> housesToTest = new List<House>() 
+            {
+                _factory.CreateHouse("mansion"),
+                _factory.CreateHouse("tinyHouse"),
+                _factory.CreateHouse("singleFamilyHouse")
+
+            };
+
+            CollectionAssert.AllItemsAreNotNull(housesToTest);
+        }
     }
 }
