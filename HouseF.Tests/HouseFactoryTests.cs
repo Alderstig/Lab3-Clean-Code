@@ -21,27 +21,33 @@ namespace HouseF.Tests
         }
 
         [Test]
-        public void CreateHouse_GivenHouse_ReturnsTrueIfIsInstanceOfSingleFamilyHouse()
+        public void CreateHouse_GivenSingleFamilyHouse_ReturnsTrueIfActualValuesAreEqualToExpectedValues()
         {
-            House singleFamilyHouse = _factory.CreateHouse("singleFamilyHouse");
+            List<object> expectedValues = CreateListOfValues(4, 8, false, 2);
 
-            Assert.IsInstanceOf<SingleFamilyHouse>(singleFamilyHouse);
+            List<object> actualValues = CreateHouseAndExtractValuesIntoList("singleFamilyHouse");
+
+            CollectionAssert.AreEqual(expectedValues, actualValues);
         }
 
         [Test]
-        public void CreateHouse_GivenHouse_ReturnsTrueIfIsInstanceOfTinyHouse()
+        public void CreateHouse_GivenTinyHouse_ReturnsTrueIfActualValuesAreEqualToExpectedValues() 
         {
-            House tinyHouse = _factory.CreateHouse("tinyHouse");
+            List<object> expectedValues = CreateListOfValues(2, 4, false, 0);
 
-            Assert.IsInstanceOf<TinyHouse>(tinyHouse);
+            List<object> actualValues = CreateHouseAndExtractValuesIntoList("tinyHouse");
+
+            CollectionAssert.AreEqual(expectedValues, actualValues);
         }
 
         [Test]
-        public void CreateHouse_GivenHouse_ReturnsTrueIfIsInstanceOfMansion()
+        public void CreateHouse_GivenMansion_ReturnsTrueIfActualValuesAreEqualToExpectedValues()
         {
-            House mansion = _factory.CreateHouse("mansion");
+            List<object> expectedValues = CreateListOfValues(10, 20, true, 8);
 
-            Assert.IsInstanceOf<Mansion>(mansion);
+            List<object> actualValues = CreateHouseAndExtractValuesIntoList("mansion");
+
+            CollectionAssert.AreEqual(expectedValues, actualValues);
         }
 
         [Test]
@@ -52,10 +58,26 @@ namespace HouseF.Tests
                 _factory.CreateHouse("mansion"),
                 _factory.CreateHouse("tinyHouse"),
                 _factory.CreateHouse("singleFamilyHouse")
-
             };
 
             CollectionAssert.AllItemsAreNotNull(housesToTest);
+        }
+
+        private List<object> CreateListOfValues(int noOfRooms, int noOfWindows, bool hasSwimmingPool, int parkingSpotsInGarage)
+        {
+            return new List<object> { noOfRooms, noOfWindows, hasSwimmingPool, parkingSpotsInGarage };
+        }
+
+        private List<object> CreateHouseAndExtractValuesIntoList(string houseType)
+        {
+            House house = _factory.CreateHouse(houseType);
+            List<object> values = CreateListOfValues(
+                house.NoOfRooms,
+                house.NoOfWindows,
+                house.HasSwimmingPool,
+                house.ParkingSpotsInGarage);
+
+            return values;
         }
     }
 }
