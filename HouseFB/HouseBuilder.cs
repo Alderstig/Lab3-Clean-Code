@@ -46,7 +46,7 @@ namespace HouseFB
         }
         public House Build()
         {
-            if(_house.NoOfRooms < 1 || _house.NoOfWindows < 0 || _house.ParkingSpotsInGarage < 0) throw new Exception("House does not meet the requirements of a house");
+            if(_house.NoOfRooms < 1 || _house.NoOfWindows < 0 || _house.ParkingSpotsInGarage < 0) throw new Exception("The house does not meet the requirements");
             return _house;
         }
     }

@@ -18,20 +18,16 @@ namespace HouseFB.Tests
         }
 
         [Test]
-        public void Build_GivenHouse_ReturnsTrueIfExceptionNotThrown()
+        public void Build_GivenHouseBuilder_ReturnsTrueIfExceptionNotThrown()
         {
-            //Osäker på detta utförande, vill egentligen bara testa .Build()
-
-            Assert.DoesNotThrow(() =>
-            {
-                House house = _builder
+            HouseBuilder builder = _builder
                     .SetNoOfRooms(1)
                     .SetNoOfWindows(1)
                     .SetStreetAdress("MyAdress 1")
                     .HasSwimmingPool(false)
-                    .SetNoOfParkingSpots(1)
-                    .Build();
-            });
+                    .SetNoOfParkingSpots(1);
+
+            Assert.DoesNotThrow(() => builder.Build());
         }
     }
 }
